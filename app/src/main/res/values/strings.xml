@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AppTreino</string>
+    <string name="title_activity_tela1">Tela1</string>
+    <string name="title_activity_principal">Principal</string>
+    <string name="title_activity_professor">Professor</string>
+    <string name="title_activity_aluno">Aluno</string>
+</resources>

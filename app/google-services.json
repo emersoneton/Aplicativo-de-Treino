@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "579070677415",
+    "firebase_url": "https://sistema-de-treino-529cb.firebaseio.com",
+    "project_id": "sistema-de-treino-529cb",
+    "storage_bucket": "sistema-de-treino-529cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579070677415:android:c04536b2149e1ad312e682",
+        "android_client_info": {
+          "package_name": "com.example.apptreino"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579070677415-bj766r0nmr5nftp4nemb4e0aer7k5p4m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.apptreino",
+            "certificate_hash": "82c8777365a9b633d6b04b0a6c6f0612f7b5407a"
+          }
+        },
+        {
+          "client_id": "579070677415-m335dpli4h3vpir7d3dqujalq86s8aq0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7A9EkDCa8izzx-Krs0d4vFAE_-Jvccmw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579070677415-m335dpli4h3vpir7d3dqujalq86s8aq0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
