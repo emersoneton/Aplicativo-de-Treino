@@ -26,7 +26,6 @@ public class Aluno extends AppCompatActivity {
     private EditText txtNome;
     private EditText txtEmail;
     private EditText txtSenha;
- //   private FirebaseAnalytics mFirebaseAnalytics;
 
 
     FirebaseDatabase firebaseDatabase;
@@ -41,19 +40,10 @@ public class Aluno extends AppCompatActivity {
         txtNome = findViewById(R.id.txtNomeAluno);
         txtEmail = findViewById(R.id.txtEmailAluno);
         txtSenha = findViewById(R.id.txtSenhaAluno);
-    //    mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-    //    inicializarFirebase();
 
     }
 
- /*   private void inicializarFirebase() {
 
-        FirebaseApp.initializeApp(Aluno.this);
-
-        firebaseDatabase = FirebaseDatabase.getInstance();
-
-        databaseReference = firebaseDatabase.getReference();
-    } */
 
     public void voltar (View view){
 
@@ -66,10 +56,12 @@ public class Aluno extends AppCompatActivity {
 
         aluno alu = new aluno();
 
-            alu.setId(UUID.randomUUID().toString());
+          //  alu.setId(UUID.randomUUID().toString());
            alu.setNome(txtNome.getText().toString());
             alu.setEmail(txtEmail.getText().toString());
             alu.setSenha(txtSenha.getText().toString());
+            alu.setTipo("A");
+
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference();

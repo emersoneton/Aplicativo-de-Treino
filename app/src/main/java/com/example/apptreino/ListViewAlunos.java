@@ -6,7 +6,15 @@ import android.os.Bundle;
 import com.example.apptreino.modelo.aluno;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -16,8 +24,18 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListViewAlunos extends AppCompatActivity {
+
+    private ListView ListViewAluno;
+
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+
+    private List<Aluno> listPessoa = new ArrayList<Aluno>();
+    private ArrayAdapter<Aluno> arrayAdapterAluno;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,37 +44,49 @@ public class ListViewAlunos extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ListView lista = (ListView) findViewById(R.id.ListViewAluno);
+        inicializarComponentes();
+        inicializaFirebase();
 
-        ArrayList<String> alunos = preencherDados();
+    }
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,alunos);
 
-        lista.setAdapter(arrayAdapter);
+    private void inicializaFirebase() {
 
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        FirebaseApp.initializeApp(ListViewAlunos.this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
+
+    }
+
+    private void inicializarComponentes() {
+
+        ListViewAluno = (ListView) findViewById(R.id.ListViewAluno);
+
+        Query query;
+        query = databaseReference.child("aluno").orderByChild("nome");
+
+        listPessoa.clear();
+
+        query.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                // Código de Clique depois
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot objSnapshot:dataSnapshot.getChildren()){
+                    Aluno alu = objSnapshot.getValue(Aluno.class);
+                    listPessoa.add(alu);
+                }
+
+                arrayAdapterAluno = new ArrayAdapter<Aluno>(ListViewAlunos.this, android.R.layout.simple_list_item_1,listPessoa);
+                ListViewAluno.setAdapter(arrayAdapterAluno);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
+
+
     }
 
-    private ArrayList<String> preencherDados(){
-
-        Intent intent = getIntent();
-        Bundle params = intent.getExtras();
-        String nome = params.getString("nome");
-
-        aluno alu = new aluno();
-
-        ArrayList<String> dados = new ArrayList<>();
-
-        dados.add(nome);
-
-
-        return dados;
-
-    }
 
 }

@@ -45,7 +45,7 @@ public class Principal extends AppCompatActivity {
     }
 
     public void finish(View view) {
-
+        finish();
     }
 
 }

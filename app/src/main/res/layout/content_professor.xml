@@ -11,74 +11,90 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="201dp">
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="-57dp">
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/txtNomeProfessor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Nome"
             android:inputType="textPersonName"
-            android:text="Nome"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.166"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.025" />
+
+        <EditText
+            android:id="@+id/txtTelefoneProfessor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Telefone"
+            android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.176"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.093" />
+            app:layout_constraintVertical_bias="0.153" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/txtSenhaProfessor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Senha"
             android:inputType="textPersonName"
-            android:text="Telefone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.176"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.23" />
+            app:layout_constraintVertical_bias="0.417" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/txtEmailProfessor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Email"
             android:inputType="textPersonName"
-            android:text="E-MAIL"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.176"
+            app:layout_constraintHorizontal_bias="0.166"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.38" />
+            app:layout_constraintVertical_bias="0.29" />
 
         <Switch
-            android:id="@+id/switch1"
+            android:id="@+id/swNutricionista"
             android:layout_width="145dp"
             android:layout_height="53dp"
-            android:text="Treinador"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.125"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText3"
-            app:layout_constraintVertical_bias="0.129" />
-
-        <Switch
-            android:id="@+id/switch3"
-            android:layout_width="145dp"
-            android:layout_height="53dp"
+            android:layout_marginBottom="100dp"
             android:text="Nutricionista"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.124"
+            app:layout_constraintHorizontal_bias="0.131"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText3"
-            app:layout_constraintVertical_bias="0.373" />
+            app:layout_constraintTop_toBottomOf="@+id/swTreinador"
+            app:layout_constraintVertical_bias="0.375" />
+
+        <Switch
+            android:id="@+id/swTreinador"
+            android:layout_width="145dp"
+            android:layout_height="53dp"
+            android:layout_marginBottom="160dp"
+            android:text="Treinador"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.131"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSenhaProfessor"
+            app:layout_constraintVertical_bias="0.266" />
 
         <Button
             android:id="@+id/btnVoltarProfessor"
@@ -90,20 +106,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.278"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/switch3"
-            app:layout_constraintVertical_bias="0.533" />
+            app:layout_constraintTop_toBottomOf="@+id/swNutricionista"
+            app:layout_constraintVertical_bias="0.572" />
 
         <Button
             android:id="@+id/btnSalvarProfessor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="Salvar"
             android:text="SALVAR"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.708"
+            app:layout_constraintHorizontal_bias="0.727"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/switch3"
-            app:layout_constraintVertical_bias="0.533" />
+            app:layout_constraintTop_toBottomOf="@+id/swNutricionista"
+            app:layout_constraintVertical_bias="0.57" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

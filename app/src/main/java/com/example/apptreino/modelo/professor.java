@@ -1,22 +1,14 @@
 package com.example.apptreino.modelo;
 
-import com.example.apptreino.Aluno;
+public class professor {
 
-public class aluno extends Aluno {
-
-    private String id;
     private String nome;
+    private String telefone;
     private String email;
     private String senha;
+    private String nutricionista;
+    private String treinador;
     private String tipo;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;
@@ -24,6 +16,14 @@ public class aluno extends Aluno {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     public String getEmail() {
@@ -40,6 +40,22 @@ public class aluno extends Aluno {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getNutricionista() {
+        return nutricionista;
+    }
+
+    public void setNutricionista(String nutricionista) {
+        this.nutricionista = nutricionista;
+    }
+
+    public String getTreinador() {
+        return treinador;
+    }
+
+    public void setTreinador(String treinador) {
+        this.treinador = treinador;
     }
 
     public String getTipo() {
