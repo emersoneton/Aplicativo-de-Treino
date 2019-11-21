@@ -37,6 +37,13 @@ public class Principal extends AppCompatActivity {
 
     }
 
+    public void ListViewAlunos (View view){
+
+        Intent intent = new Intent(Principal.this,ListViewAlunos.class);
+        startActivity( intent );
+
+    }
+
     public void finish(View view) {
 
     }

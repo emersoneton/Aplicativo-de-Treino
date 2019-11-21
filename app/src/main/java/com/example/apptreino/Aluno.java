@@ -26,6 +26,8 @@ public class Aluno extends AppCompatActivity {
     private EditText txtNome;
     private EditText txtEmail;
     private EditText txtSenha;
+ //   private FirebaseAnalytics mFirebaseAnalytics;
+
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -39,41 +41,41 @@ public class Aluno extends AppCompatActivity {
         txtNome = findViewById(R.id.txtNomeAluno);
         txtEmail = findViewById(R.id.txtEmailAluno);
         txtSenha = findViewById(R.id.txtSenhaAluno);
+    //    mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+    //    inicializarFirebase();
 
     }
 
-    private void inicializarFirebase() {
+ /*   private void inicializarFirebase() {
 
         FirebaseApp.initializeApp(Aluno.this);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
 
         databaseReference = firebaseDatabase.getReference();
-    }
-
-  //  @Override
-  //  public boolean onCreateOptionsMenu(Menu menu) {
-      //  getMenuInflater().inflate(R.id.btnSalvarAluno);
-    //    return super.onCreateOptionsMenu(menu);
-   // }
+    } */
 
     public void voltar (View view){
 
-        Intent intent = new Intent(Aluno.this,Principal.class);
-        startActivity( intent );
+        finish();
 
     }
 
 
     public void Salvar(View view){
 
-            aluno alu = new aluno();
+        aluno alu = new aluno();
 
             alu.setId(UUID.randomUUID().toString());
-            alu.setNome(txtNome.getText().toString());
+           alu.setNome(txtNome.getText().toString());
             alu.setEmail(txtEmail.getText().toString());
             alu.setSenha(txtSenha.getText().toString());
-            databaseReference.child("Aluno").child(alu.getId()).setValue(alu);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference reference = database.getReference();
+        reference.child("aluno").push().setValue(alu);
+
+        finish();
 
     }
 

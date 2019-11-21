@@ -4,4 +4,5 @@
     <string name="title_activity_principal">Principal</string>
     <string name="title_activity_professor">Professor</string>
     <string name="title_activity_aluno">Aluno</string>
+    <string name="title_activity_list_view_alunos">ListViewAlunos</string>
 </resources>

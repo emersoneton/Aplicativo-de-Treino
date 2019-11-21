@@ -9,9 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.content.Intent;
 
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
     private Button btnEntrar;
     private TextView txtTeste;
 
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +27,9 @@ public class MainActivity extends AppCompatActivity {
         btnEntrar = findViewById(R.id.btnEntrar);
         txtTeste = findViewById(R.id.txtTeste);
 
-        inicializarFirebase();
 
     }
 
-    private void inicializarFirebase() {
-
-        FirebaseApp.initializeApp(MainActivity.this);
-
-        firebaseDatabase = FirebaseDatabase.getInstance();
-
-        databaseReference = firebaseDatabase.getReference();
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
