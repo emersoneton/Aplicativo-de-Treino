@@ -12,9 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Busca_Treino_Dieta"
+            android:label="@string/title_activity_busca__treino__dieta"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".Cadastro_Treino_Dieta"
             android:label="@string/title_activity_cadastro__treino__dieta"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ListViewAlunos"
             android:label="@string/title_activity_list_view_alunos"

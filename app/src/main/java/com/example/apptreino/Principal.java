@@ -39,10 +39,27 @@ public class Principal extends AppCompatActivity {
 
     public void ListViewAlunos (View view){
 
-      //  Intent intent = new Intent(Principal.this,ListViewAlunos.class);
-      //  startActivity( intent );
+        Intent intent = new Intent(Principal.this,ListViewAlunos.class);
+        startActivity( intent );
 
         // Intent de teste
+       // Intent intent = new Intent(Principal.this,Cadastro_Treino_Dieta.class);
+       // startActivity( intent );
+
+      //  Intent intent = new Intent(Principal.this,Busca_Treino_Dieta.class);
+      //  startActivity( intent );
+
+    }
+
+    public void BuscaBanco(View view){
+
+        Intent intent = new Intent(Principal.this,Busca_Treino_Dieta.class);
+        startActivity( intent );
+
+    }
+
+    public void CadastroTreinos(View view){
+
         Intent intent = new Intent(Principal.this,Cadastro_Treino_Dieta.class);
         startActivity( intent );
 

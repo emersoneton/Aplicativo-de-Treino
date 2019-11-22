@@ -1,17 +1,11 @@
 package com.example.apptreino.modelo;
 
-public class treinos_e_dietas {
+public class dietas_e_treinos {
 
-    private String treinos;
+
     private String dietas;
 
-    public String getTreinos() {
-        return treinos;
-    }
 
-    public void setTreinos(String treinos) {
-        this.treinos = treinos;
-    }
 
     public String getDietas() {
         return dietas;
@@ -23,7 +17,7 @@ public class treinos_e_dietas {
 
     @Override
     public String toString() {
-        return  treinos;
+        return  dietas;
     }
 
 
