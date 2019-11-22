@@ -40,7 +40,7 @@ public class Aluno extends AppCompatActivity {
         txtNome = findViewById(R.id.txtNomeAluno);
         txtEmail = findViewById(R.id.txtEmailAluno);
         txtSenha = findViewById(R.id.txtSenhaAluno);
-
+        txtNome.requestFocus();
     }
 
 

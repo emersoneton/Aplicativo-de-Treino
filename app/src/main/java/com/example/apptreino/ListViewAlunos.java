@@ -105,6 +105,12 @@ public class ListViewAlunos extends AppCompatActivity {
     }
 
 
+    View.OnClickListener clickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            System.out.println("entrou aqui!");
+        }
+    };
 
 /*
 

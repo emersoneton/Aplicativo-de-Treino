@@ -39,7 +39,11 @@ public class Principal extends AppCompatActivity {
 
     public void ListViewAlunos (View view){
 
-        Intent intent = new Intent(Principal.this,ListViewAlunos.class);
+      //  Intent intent = new Intent(Principal.this,ListViewAlunos.class);
+      //  startActivity( intent );
+
+        // Intent de teste
+        Intent intent = new Intent(Principal.this,Cadastro_Treino_Dieta.class);
         startActivity( intent );
 
     }
