@@ -2,21 +2,13 @@ package com.example.apptreino.modelo;
 
 import com.example.apptreino.Aluno;
 
-public class aluno extends Aluno {
+public class aluno {
 
-    private String id;
+  //  private String id;
     private String nome;
     private String email;
     private String senha;
     private String tipo;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;
@@ -48,5 +40,10 @@ public class aluno extends Aluno {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return nome;
     }
 }

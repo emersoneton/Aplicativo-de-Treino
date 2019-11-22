@@ -28,8 +28,8 @@ public class Aluno extends AppCompatActivity {
     private EditText txtSenha;
 
 
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
+   // FirebaseDatabase firebaseDatabase;
+  //  DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,20 +54,22 @@ public class Aluno extends AppCompatActivity {
 
     public void Salvar(View view){
 
-        aluno alu = new aluno();
+        aluno Alu = new aluno();
 
           //  alu.setId(UUID.randomUUID().toString());
-           alu.setNome(txtNome.getText().toString());
-            alu.setEmail(txtEmail.getText().toString());
-            alu.setSenha(txtSenha.getText().toString());
-            alu.setTipo("A");
+            Alu.setNome(txtNome.getText().toString());
+            Alu.setEmail(txtEmail.getText().toString());
+            Alu.setSenha(txtSenha.getText().toString());
+            Alu.setTipo("A");
+            String valor = "jjj";
 
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference();
-        reference.child("aluno").push().setValue(alu);
+        reference.child("aluno").push().setValue(Alu);
 
         finish();
+
 
     }
 
