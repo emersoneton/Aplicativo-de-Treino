@@ -51,19 +51,6 @@ public class Principal extends AppCompatActivity {
 
     }
 
-    public void BuscaBanco(View view){
-
-        Intent intent = new Intent(Principal.this,Busca_Treino_Dieta.class);
-        startActivity( intent );
-
-    }
-
-    public void CadastroTreinos(View view){
-
-        Intent intent = new Intent(Principal.this,Cadastro_Treino_Dieta.class);
-        startActivity( intent );
-
-    }
 
     public void finish(View view) {
         finish();

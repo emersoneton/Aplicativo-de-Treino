@@ -142,6 +142,8 @@ public class Busca_Treino_Dieta extends AppCompatActivity {
 
     private void inicializarComponentes() {
 
+        String valor = "treino";
+
         Query query;
         query = databaseReference.child("treinos").orderByChild("treinos");
         Query queryDieta;

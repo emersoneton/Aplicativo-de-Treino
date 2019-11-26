@@ -60,7 +60,35 @@ public class ListViewAlunos extends AppCompatActivity {
         inicializarComponentes();
 
 
+        ListViewAluno.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                Intent intent = new Intent(ListViewAlunos.this,Busca_Treino_Dieta.class);
+                startActivity( intent );
+            }
+        });
+
+
+
+        ListViewAluno.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+                                           int pos, long id) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent(ListViewAlunos.this,Cadastro_Treino_Dieta.class);
+                startActivity( intent );
+
+
+                return true;
+            }
+        });
+
+
+
+
     }
+
 
 
     private void inicializaFirebase() {
