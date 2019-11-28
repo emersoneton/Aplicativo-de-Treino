@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.example.apptreino.modelo.aluno;
 import com.example.apptreino.modelo.jogavalores;
+import com.example.apptreino.modelo.login;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.FirebaseApp;
@@ -35,6 +36,7 @@ import java.util.List;
 public class ListViewAlunos extends AppCompatActivity {
 
     private ListView ListViewAluno;
+    String NomedaBusca;
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -124,10 +126,18 @@ public class ListViewAlunos extends AppCompatActivity {
 
     private void inicializarComponentes() {
 
+        login login = new login();
 
+        NomedaBusca = login.getNomedabusca();
 
         Query query;
-        query = databaseReference.child("aluno").orderByChild("nome");
+
+        if (NomedaBusca.equals("0")){
+            query = databaseReference.child("aluno").orderByChild("nome");
+        }else{
+            query = databaseReference.child("aluno").orderByChild("nome").equalTo(NomedaBusca);
+        }
+
 
         listPessoa.clear();
 
@@ -152,7 +162,7 @@ public class ListViewAlunos extends AppCompatActivity {
 
         });
 
-
+        login.funcao2();
     }
 
 
