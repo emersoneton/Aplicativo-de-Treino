@@ -67,10 +67,10 @@ public class MainActivity extends AppCompatActivity {
         if (senha.equals("a") && login.equals("a")){
 
         }
-        logar();
+      //  logar();
 
-     //   Intent intent = new Intent(MainActivity.this,Principal.class);
-     //   startActivity( intent );
+        Intent intent = new Intent(MainActivity.this,Principal.class);
+        startActivity( intent );
 
     }
 

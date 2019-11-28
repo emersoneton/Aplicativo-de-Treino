@@ -72,6 +72,13 @@ public class Aluno extends AppCompatActivity {
 
     }
 
+    public void limpaTela(){
+        txtEmail.setText("");
+        txtNome.setText("");
+        txtSenha.setText("");
+
+    }
+
     private void criarUsuario(){
         aluno Alu = new aluno();
 
@@ -99,11 +106,12 @@ public class Aluno extends AppCompatActivity {
 
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                                 DatabaseReference reference = database.getReference();
-                                reference.child("aluno").child(usuario.getUid()).push().setValue(Alu);
-
+                                reference.child("aluno").push().setValue(Alu);
+//.child(usuario.getUid())
                                 Toast.makeText(Aluno.this,
                                         "Cadastrado com Sucesso!",
                                         Toast.LENGTH_LONG).show();
+                                        limpaTela();
                             }else {
                                 Toast.makeText(Aluno.this,
                                         "Erro ao cadastrar!",

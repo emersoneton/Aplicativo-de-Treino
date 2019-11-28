@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.apptreino.modelo.dietas_e_treinos;
+import com.example.apptreino.modelo.jogavalores;
 import com.example.apptreino.modelo.treinos_e_dietas;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -49,9 +50,13 @@ public class Cadastro_Treino_Dieta extends AppCompatActivity {
 
         treinos_e_dietas treinos = new treinos_e_dietas();
         dietas_e_treinos dietas = new dietas_e_treinos();
+        jogavalores alu = new jogavalores();
+
+        String valor1 = alu.valor;
 
         treinos.setTreinos(edtCadastroTreino.getText().toString());
         treinos.setDietas(edtCadastroDieta.getText().toString());
+        treinos.setNomebusca(valor1);
 
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();

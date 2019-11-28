@@ -2,8 +2,12 @@ package com.example.apptreino;
 
 import android.os.Bundle;
 
+import com.example.apptreino.modelo.aluno;
+import com.example.apptreino.modelo.buscanome;
 import com.example.apptreino.modelo.dietas_e_treinos;
+import com.example.apptreino.modelo.jogavalores;
 import com.example.apptreino.modelo.treinos_e_dietas;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,6 +34,7 @@ public class Busca_Treino_Dieta extends AppCompatActivity {
 
     private ListView ListViewBuscaTreino;
     private ListView ListViewBuscaDieta;
+    String valor1;
 
   //  private ListView ListViewAluno;
 
@@ -58,6 +63,8 @@ public class Busca_Treino_Dieta extends AppCompatActivity {
         setSupportActionBar(toolbar);
      //   ListViewBuscaTreino = findViewById(R.id.ListViewBuscaTreino);
         tela_busca = findViewById(R.id.tela_busca);
+
+
 
         inicializaFirebase();
 
@@ -134,6 +141,12 @@ public class Busca_Treino_Dieta extends AppCompatActivity {
 
     private void inicializaFirebase() {
 
+        aluno alu = new aluno();
+
+        String valor = alu.getNome();
+
+       System.out.println(valor);
+
         //FirebaseApp.initializeApp(ListViewAlunos.this);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
@@ -142,24 +155,34 @@ public class Busca_Treino_Dieta extends AppCompatActivity {
 
     private void inicializarComponentes() {
 
-        String valor = "treino";
+        jogavalores alu = new jogavalores();
+
+        valor1 = alu.valor;
+
+        System.out.println("O valore KKKKKKKKKKKKKKKKKKKKKKKKKKKKKK:"+valor1);
+
+      //  String valor = "treino";
 
         Query query;
-        query = databaseReference.child("treinos").orderByChild("treinos");
+        query = databaseReference.child("treinos").orderByChild("nomebusca").equalTo(valor1);
         Query queryDieta;
-        queryDieta = databaseReference.child("treinos").orderByChild("dietas");
-
+        queryDieta = databaseReference.child("treinos").orderByChild("nomebusca").equalTo(valor1);
+    //    Query queryNome;
+    //    queryNome = databaseReference.child("treinos").orderByChild("treino");
 
 
         listTreino.clear();
         listDieta.clear();
+
+
 
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot objSnapshot:dataSnapshot.getChildren()){
                     treinos_e_dietas treinos = objSnapshot.getValue(treinos_e_dietas.class);
-                    listTreino.add(treinos);
+                        listTreino.add(treinos);
+
                 }
                 arrayAdaptertreinos_e_dietas.notifyDataSetChanged();
                 // arrayAdapterAluno =
@@ -199,6 +222,45 @@ public class Busca_Treino_Dieta extends AppCompatActivity {
 
 
         });
+
+
+
+
+
+
+
+
+
+
+    /*    queryNome.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot objSnapshot:dataSnapshot.getChildren()){
+                    buscanome nome = objSnapshot.getValue(buscanome.class);
+                    if (nome.equals(valor1)){
+                        System.out.println("hahahahahhahahahahahahahahahahahahahahahahaa: "+nome);
+                    }else{
+                        System.out.println("hahahahahhahahahahahahahahahahahahahahahahaa: "+nome);
+                    }
+                    //  System.out.println("hahahahahhahahahahahahahahahahahahahahahahaa"+treinos);
+                    //     listTreino.add(treinos);
+
+                }
+                arrayAdaptertreinos_e_dietas.notifyDataSetChanged();
+                // arrayAdapterAluno =
+                //  ListViewAluno.setAdapter(arrayAdapterAluno);
+            }
+
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+
+
+
+        });*/
 
 
     }

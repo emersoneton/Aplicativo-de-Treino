@@ -4,6 +4,7 @@ public class treinos_e_dietas {
 
     private String treinos;
     private String dietas;
+    private String nomebusca;
 
     public String getTreinos() {
         return treinos;
@@ -21,11 +22,16 @@ public class treinos_e_dietas {
         this.dietas = dietas;
     }
 
-    @Override
-    public String toString() {
-        return  treinos;
+    public String getNomebusca() {
+        return nomebusca;
     }
 
+    public void setNomebusca(String nomebusca) {
+        this.nomebusca = nomebusca;
+    }
 
-
+    @Override
+    public String toString() {
+        return treinos;
+    }
 }

@@ -1,9 +1,11 @@
 package com.example.apptreino;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.apptreino.modelo.aluno;
+import com.example.apptreino.modelo.jogavalores;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.FirebaseApp;
@@ -24,6 +26,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +57,8 @@ public class ListViewAlunos extends AppCompatActivity {
         setSupportActionBar(toolbar);
         inicializaFirebase();
 
+
+
         ListViewAluno = (ListView) findViewById(R.id.ListViewAluno);
 
         arrayAdapterAluno = new ArrayAdapter<aluno>(this, android.R.layout.simple_list_item_1, listPessoa);
@@ -60,12 +66,29 @@ public class ListViewAlunos extends AppCompatActivity {
         inicializarComponentes();
 
 
+
         ListViewAluno.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position,
-                                    long id) {
-                Intent intent = new Intent(ListViewAlunos.this,Busca_Treino_Dieta.class);
-                startActivity( intent );
+            public void onItemClick(AdapterView<?> adapterView, View view, int position,
+                                    long l) {
+
+                int posicao = position;
+
+                String identificador = ListViewAluno.getItemAtPosition(posicao).toString();
+
+              //  Snackbar.make(view, "Nome: "+identificador, Snackbar.LENGTH_LONG)
+              //             .setAction("Action", null).show();
+
+                jogavalores alu = new jogavalores();
+                alu.valor = identificador;
+
+             //   String valor1 = alu.valor;
+
+              //  System.out.println("O valore KKKKKKKKKKKKKKKKKKKKKKKKKKKKKK:"+valor1);
+
+                   Intent intent = new Intent(ListViewAlunos.this,Busca_Treino_Dieta.class);
+                   startActivity( intent );
+
             }
         });
 
