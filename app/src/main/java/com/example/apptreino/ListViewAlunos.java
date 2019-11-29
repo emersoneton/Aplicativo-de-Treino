@@ -105,6 +105,13 @@ public class ListViewAlunos extends AppCompatActivity {
                 Intent intent = new Intent(ListViewAlunos.this,Cadastro_Treino_Dieta.class);
                 startActivity( intent );
 
+                String identificador = ListViewAluno.getItemAtPosition(pos).toString();
+
+                //  Snackbar.make(view, "Nome: "+identificador, Snackbar.LENGTH_LONG)
+                //             .setAction("Action", null).show();
+
+                jogavalores alu = new jogavalores();
+                alu.valor = identificador;
 
                 return true;
             }
@@ -145,7 +152,7 @@ public class ListViewAlunos extends AppCompatActivity {
 
         }else{
             query = databaseReference.child("aluno").orderByChild("nomedoprofessor").equalTo(Professor);
-            Alu.limpaprofessor();
+         //   Alu.limpaprofessor();
         }
 
 
