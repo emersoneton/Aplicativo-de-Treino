@@ -3,6 +3,8 @@ package com.example.apptreino;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.apptreino.modelo.aluno;
+import com.example.apptreino.modelo.login;
 import com.example.apptreino.modelo.professor;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -68,6 +70,12 @@ public class Principal extends AppCompatActivity {
 
 
     public void finish(View view) {
+        aluno Alu = new aluno();
+        login login = new login();
+        professor Prof = new professor();
+        Alu.limpaprofessor();
+        Prof.professor2();
+        login.funcao2();
         finish();
     }
 
