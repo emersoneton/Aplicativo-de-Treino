@@ -37,6 +37,7 @@ public class ListViewAlunos extends AppCompatActivity {
 
     private ListView ListViewAluno;
     String NomedaBusca;
+    String Professor;
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -127,8 +128,10 @@ public class ListViewAlunos extends AppCompatActivity {
     private void inicializarComponentes() {
 
         login login = new login();
+        aluno Alu = new aluno();
 
         NomedaBusca = login.getNomedabusca();
+        Professor = Alu.getNomeProfessor();
 
         Query query;
 
@@ -136,6 +139,13 @@ public class ListViewAlunos extends AppCompatActivity {
             query = databaseReference.child("aluno").orderByChild("nome");
         }else{
             query = databaseReference.child("aluno").orderByChild("nome").equalTo(NomedaBusca);
+        }
+
+        if (Professor.equals("0")){
+
+        }else{
+            query = databaseReference.child("aluno").orderByChild("nomedoprofessor").equalTo(Professor);
+            Alu.limpaprofessor();
         }
 
 

@@ -33,7 +33,7 @@ public class Principal extends AppCompatActivity {
 
         String tipos = prof.getTipos();
         if (tipos.equals("P")) {
-            btnCadastraProfessor.setVisibility(View.INVISIBLE);
+            btnCadastraProfessor.setEnabled(false);
             prof.professor2();
         }
     }

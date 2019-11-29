@@ -34,6 +34,7 @@ public class Aluno extends AppCompatActivity {
     private EditText txtSenha;
     private FirebaseAuth auth;
     private FirebaseUser usuario;
+    String nomeProfessor;
 
 
    // FirebaseDatabase firebaseDatabase;
@@ -82,7 +83,7 @@ public class Aluno extends AppCompatActivity {
     private void criarUsuario(){
         aluno Alu = new aluno();
 
-
+        nomeProfessor = Alu.getNomeProfessor();
         String email = txtEmail.getText().toString();
         String senha = txtSenha.getText().toString();
 
@@ -102,6 +103,7 @@ public class Aluno extends AppCompatActivity {
                                 Alu.setNome(txtNome.getText().toString());
                                 Alu.setEmail(txtEmail.getText().toString());
                                 Alu.setSenha(txtSenha.getText().toString());
+                                Alu.setNomedoprofessor(nomeProfessor);
                                 Alu.setTipo("A");
 
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();

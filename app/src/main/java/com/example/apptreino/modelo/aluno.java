@@ -9,6 +9,9 @@ public class aluno {
     private String email;
     private String senha;
     private String tipo;
+    private static String  nomeProfessor = "0";
+    private String nomedoprofessor;
+
 
     public String getNome() {
         return nome;
@@ -42,9 +45,31 @@ public class aluno {
         this.tipo = tipo;
     }
 
+    public static String getNomeProfessor() {
+        return nomeProfessor;
+    }
+
+    public static void setNomeProfessor(String nomeProfessor) {
+        aluno.nomeProfessor = nomeProfessor;
+    }
+
+    public String getNomedoprofessor() {
+        return nomedoprofessor;
+    }
+
+    public void setNomedoprofessor(String nomedoprofessor) {
+        this.nomedoprofessor = nomedoprofessor;
+    }
 
     @Override
     public String toString() {
         return nome;
+    }
+
+    public void cadprofessor(){
+        nomeProfessor = nomedoprofessor;
+    }
+    public void limpaprofessor(){
+        nomeProfessor = "0";
     }
 }

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Toast;
 
+import com.example.apptreino.modelo.aluno;
 import com.example.apptreino.modelo.login;
 import com.example.apptreino.modelo.professor;
 import com.example.apptreino.modelo.treinos_e_dietas;
@@ -210,6 +211,9 @@ public class MainActivity extends AppCompatActivity {
                                             String nome = treinos.getNome();
 
                                             if (tipo.equals("P")){
+                                                aluno alu = new aluno();
+                                                alu.setNomedoprofessor(nome);
+                                                alu.cadprofessor();
                                                 professor prof = new professor();
                                                 prof.setTipo("P");
                                                 prof.professor();

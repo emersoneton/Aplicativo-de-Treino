@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Principal"
-    tools:showIn="@layout/activity_principal">
+    tools:showIn="@layout/activity_principal"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,7 +21,8 @@
             android:layout_height="77dp"
             android:onClick="professor"
             android:text="CADASTRO DE PROFESSOR"
-            android:visibility="visible"
+            android:enabled="true"
+            android:background="#BE8BC34A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
@@ -34,6 +36,7 @@
             android:layout_height="77dp"
             android:onClick="aluno"
             android:text="CADASTRO DE ALUNO"
+            android:background="#BE8BC34A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.878"
@@ -47,6 +50,7 @@
             android:layout_height="wrap_content"
             android:onClick="finish"
             android:text="SAIR"
+            android:background="#BE8BC34A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -60,6 +64,7 @@
             android:layout_height="91dp"
             android:onClick="ListViewAlunos"
             android:text="ALUNOS"
+            android:background="#BE8BC34A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
