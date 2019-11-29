@@ -9,6 +9,7 @@ public class professor {
     private String nutricionista;
     private String treinador;
     private String tipo;
+    private static String tipos = "0";
 
     public String getNome() {
         return nome;
@@ -44,6 +45,22 @@ public class professor {
 
     public String getNutricionista() {
         return nutricionista;
+    }
+
+    public static String getTipos() {
+        return tipos;
+    }
+
+    public void professor(){
+        tipos = tipo;
+    }
+
+    public void professor2(){
+        tipos = "0";
+    }
+
+    public static void setTipos(String tipos) {
+        professor.tipos = tipos;
     }
 
     public void setNutricionista(String nutricionista) {

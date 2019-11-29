@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import com.example.apptreino.modelo.login;
+import com.example.apptreino.modelo.professor;
 import com.example.apptreino.modelo.treinos_e_dietas;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -209,6 +210,9 @@ public class MainActivity extends AppCompatActivity {
                                             String nome = treinos.getNome();
 
                                             if (tipo.equals("P")){
+                                                professor prof = new professor();
+                                                prof.setTipo("P");
+                                                prof.professor();
                                                 Intent intent = new Intent(MainActivity.this,Principal.class);
                                                 startActivity( intent );
                                             }
