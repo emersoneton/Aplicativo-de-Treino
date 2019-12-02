@@ -186,18 +186,9 @@ public class MainActivity extends AppCompatActivity {
                                 });
 
 
-
-
-
-
-
                                 login = txtLogin.getText().toString();
                                 senha = txtSenha.getText().toString();
 
-                                if (login.equals("admin@admin.com") && senha.equals("administrador")){
-                                    Intent intent = new Intent(MainActivity.this,Principal.class);
-                                    startActivity( intent );
-                                }
 
                                 Query queryProfessor;
                                 query = databaseReference.child("professor").orderByChild("email").equalTo(login);
